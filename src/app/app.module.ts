@@ -6,7 +6,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import {AngularFireModule} from 'angularfire2'
+import {AngularFireDatabaseModule} from 'angularfire2/database'
+
 import { HomePage } from '../pages/home/home';
+  const firebase = {
+    apiKey: "AIzaSyBmJg3uArLky4538z2pVanpVTgRQ9-vLsA",
+    authDomain: "test-project-347aa.firebaseapp.com",
+    databaseURL: "https://test-project-347aa.firebaseio.com",
+    projectId: "test-project-347aa",
+    storageBucket: "test-project-347aa.appspot.com",
+    messagingSenderId: "624170437268"
+  };
 
 @NgModule({
   declarations: [
@@ -16,7 +27,9 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+            AngularFireModule.initializeApp(firebase),
+            AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
